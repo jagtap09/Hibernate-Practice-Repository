@@ -1,15 +1,22 @@
-package com.entity;
+package com.annotation;
 
 
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name="Department_Record")
 public class Department {
 
-	@Id
+	@Id // marks this field as the primary  key 
+	@GeneratedValue(strategy=GenerationType.IDENTITY) // auto-generation ID values 
 	int deptid;
+	@Column(name="depart_name")
 	String deptname;
 
 	// getter and setter

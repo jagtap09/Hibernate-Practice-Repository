@@ -1,10 +1,11 @@
-package com.main;
+package com.annotation;
 import org.hibernate.Session;
+
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-import com.entity.Department;
+
 public class DepartmentMain {
 
 	public static void main(String[] args) {			
@@ -16,7 +17,7 @@ public class DepartmentMain {
 			Transaction tr=ss.beginTransaction();
 			
 			Department d=new Department();
-			d.setDeptid(1);
+			
 			d.setDeptname("HR");
 	        ss.persist(d);
 			System.out.println(d);
